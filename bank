@@ -1,0 +1,40 @@
+def deposit():
+ log=input("\nEnter transaction log : ")
+ account=(log.split())
+ if(account[0]=='D'):
+ return account[1]
+ else:
+ print("\nEnter correct transaction log")
+def withdraw():
+ log=input("\nEnter transaction log : ")
+ account=(log.split())
+ if(account[0]=='W'):
+ return account[1]
+ else:
+ print("\nEnter correct transaction log")
+
+def main():
+ balance=0
+ while True:
+ print("\n**********Menu**********")
+ print("\n1. Deposit money")
+ print("\n2. Withdraw money")
+ print("\n3. Exit")
+ ch=int(input("\nEnter choice : "))
+ if ch==1:
+ a=deposit()
+ balance+=int(a)
+ print("\nCurrent balance : ",balance)
+ elif ch==2:
+ b=withdraw()
+ if(balance>=int(b)):
+ balance=balance-int(b)
+ print("\nCurrent balance : ",balance)
+ else:
+ print("\nInsufficient balance")
+ elif ch==3:
+ print("Exiting program.....")
+ break
+ else:
+ print("\nIncorrect choice")
+main(
